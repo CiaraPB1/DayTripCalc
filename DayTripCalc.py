@@ -9,7 +9,7 @@ restaurants_list = ["Amigos", "Fattoush", "Laila's Bistro"]
 transportation_list = ["Train", "Taxi", "Bus"]
 entertainment_list = ["Comedy Show", "Play", "Guided Tour"]
 generated_choices = []
-
+completed_trip = []
 #(5 points): As a user, I want a destination to be randomly selected for my day trip. 
 #(5 points): As a user, I want a restaurant to be randomly selected for my day trip
 #(5 points): As a user, I want a mode of transportation to be randomly selected for my day trip. 
@@ -52,14 +52,14 @@ print(f"Location: {generated_choices[0]}, Restaurant: {generated_choices[1]}, Tr
 # Question1 = input("Are you happy with the place? Please enter yes or no. ")
 
 
-# def Satisfaction():
-#     Question = input("Are you happy with the selections for your trip? Please enter yes or no. ")
-#     while Question == yes or Yes or YES:
-#         print("Enjoy your trip")
-#         break
-#     while Question == no or No or No
-#         Change()
-#         Ask_again()
+def Satisfaction():
+    Question = input("Are you happy with the selections for your trip? Please enter yes or no. ")
+    if Question.lower() == "yes":
+        completed_trip.extend(generated_choices)
+        print("Enjoy your trip")
+    elif Question.lower() == "no":
+        Change()
+        Ask_again()
 
 
 # def Change():
