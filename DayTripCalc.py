@@ -1,3 +1,4 @@
+import random
 
 
 #(5 points): As a developer, I want to make at least three commits with descriptive messages 
@@ -14,7 +15,6 @@ generated_choices = []
 #(5 points): As a user, I want a mode of transportation to be randomly selected for my day trip. 
 #(5 points): As a user, I want a form of entertainment to be randomly selected for my day trip.
 
-import random
 
 
 #def random_trip(location_list, restaurants_list, transportation_list, entertainment_list):
@@ -34,12 +34,12 @@ def random_trip_genorator(location_list, restaurants_list, transportation_list, 
     Entertainment = random.choice(entertainment_list)
  
     
-generated_choices.append(Location)
-generated_choices.append(Eatery)
-generated_choices.append(Mode_of_transport)
-generated_choices.append(Entertainment)
+    generated_choices.append(Location)
+    generated_choices.append(Eatery)
+    generated_choices.append(Mode_of_transport)
+    generated_choices.append(Entertainment)
 
-
+    return generated_choices
 
 random_trip_genorator(location_list, restaurants_list, transportation_list, entertainment_list)
 
@@ -47,48 +47,46 @@ random_trip_genorator(location_list, restaurants_list, transportation_list, ente
 
 #(15 points): As a user, I want to be able to randomly re-select a destination, restaurant, mode of transportation, and/or form of entertainment if I don’t like one or more of those things.
 
-print(generated_choices)
+print(f"Location: {generated_choices[0]}, Restaurant: {generated_choices[1]}, Transporation: {generated_choices[2]}, Entertaminment {generated_choices[3]}.")
 
-Question1 = input("Are you happy with the place? Please enter yes or no. ")
-if Question1 == yes
-    print("Bon voyage!")
-else: 
-
-def Satisfaction():
-    Question = input("Are you happy with the selections for your trip? Please enter yes or no. ")
-    while Question == yes or Yes or YES:
-        print("Enjoy your trip")
-        break
-    while Question == no or No or No
-        Change()
-        Ask_again()
+# Question1 = input("Are you happy with the place? Please enter yes or no. ")
 
 
-def Change():
-    What_to_change = input("What would you like to change: place, food, travel, or activity? ")
-    if What_to_change == food:
-        print(Eatery)
-    if What_to_change == place:
-        print(Location)
-    if What_to_change == activity:
-        print(Entertainment)
-    if What_to_change == travel:
-        print(Mode_of_transport)
+# def Satisfaction():
+#     Question = input("Are you happy with the selections for your trip? Please enter yes or no. ")
+#     while Question == yes or Yes or YES:
+#         print("Enjoy your trip")
+#         break
+#     while Question == no or No or No
+#         Change()
+#         Ask_again()
 
 
-def Ask_again():
-    Happy_now = input("Is this better? Please enter yes or no. ")
-    while Happy_now == yes or Yes or YES:
-        print("Enjoy your trip")
-        break
+# def Change():
+#     What_to_change = input("What would you like to change: place, food, travel, or activity? ")
+#     if What_to_change == food:
+#         print(Eatery)
+#     if What_to_change == place:
+#         print(Location)
+#     if What_to_change == activity:
+#         print(Entertainment)
+#     if What_to_change == travel:
+#         print(Mode_of_transport)
+
+
+# def Ask_again():
+#     Happy_now = input("Is this better? Please enter yes or no. ")
+#     while Happy_now == yes or Yes or YES:
+#         print("Enjoy your trip")
+#         break
 
         
 
-Satisfaction()
+# Satisfaction()
 
-Change()
+# Change()
 
-Ask_again()
+# Ask_again()
 
 #(10 points): As a user, I want to be able to confirm that my day trip is “complete” once I like all of the random selections.
 #(10  points): As a user, I want to display my completed trip in the console
