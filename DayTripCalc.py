@@ -60,10 +60,14 @@ def Satisfaction():
     elif Question.lower() == "no":
         Change()
         Ask_again()
-
+    else: 
+        print("Invalid input. Please enter 'yes' or 'no'. ")
+        Satisfaction()
+        
+            
 
 # def Change():
-#     What_to_change = input("What would you like to change: place, food, travel, or activity? ")
+#     What_to_change = input("What would ou like to change: place, food, travel, or activity? ")
 #     if What_to_change == food:
 #         print(Eatery)
 #     if What_to_change == place:
