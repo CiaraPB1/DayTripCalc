@@ -47,12 +47,17 @@ random_trip_genorator(location_list, restaurants_list, transportation_list, ente
 
 #(15 points): As a user, I want to be able to randomly re-select a destination, restaurant, mode of transportation, and/or form of entertainment if I don’t like one or more of those things.
 
-print(f"Location: {generated_choices[0]}, Restaurant: {generated_choices[1]}, Transporation: {generated_choices[2]}, Entertaminment {generated_choices[3]}.")
+def print_generated_choices():
+    print(f"Location: {generated_choices[0]}, Restaurant: {generated_choices[1]}, Transporation: {generated_choices[2]}, Entertaminment {generated_choices[3]}.")
+
+print_generated_choices()
+
 
 # Question1 = input("Are you happy with the place? Please enter yes or no. ")
 
 
 def Satisfaction():
+    print_generated_choices()
     Question = input("Are you happy with the selections for your trip? Please enter yes or no. ")
     if Question.lower() == "yes":
         completed_trip.extend(generated_choices)
@@ -63,34 +68,55 @@ def Satisfaction():
     else: 
         print("Invalid input. Please enter 'yes' or 'no'. ")
         Satisfaction()
+
+
+
+def Change():
+    print_generated_choices()
+    What_to_change = input("What would you like to change: place, food, travel, or activity? ")
+    if What_to_change.lower() == "food":
+
+        generated_choices[1] = random.choice(restaurants_list)
+        print("New Restaurant: ", generated_choices[1])
         
-            
+    elif What_to_change.lower() == "place":
+        generated_choices[0] = random.choice(location_list)
+        print("New Location: ", generated_choices[0])
 
-# def Change():
-#     What_to_change = input("What would ou like to change: place, food, travel, or activity? ")
-#     if What_to_change == food:
-#         print(Eatery)
-#     if What_to_change == place:
-#         print(Location)
-#     if What_to_change == activity:
-#         print(Entertainment)
-#     if What_to_change == travel:
-#         print(Mode_of_transport)
+    elif What_to_change.lower() == "activity":
+        generated_choices[3] = random.choice(entertainment_list)
+        print("New Activity: ", generated_choices[3])
+
+    elif What_to_change.lower() == "travel":
+        generated_choices[2] = random.choice(transportation_list)
+        print("New Transport" ,generated_choices[2])
+
+    else: 
+        print("Please enter place, food, travel, or activity.")
+        Change()
 
 
-# def Ask_again():
-#     Happy_now = input("Is this better? Please enter yes or no. ")
-#     while Happy_now == yes or Yes or YES:
-#         print("Enjoy your trip")
-#         break
 
-        
+def Ask_again():
+    print_generated_choices()
+    Happy_now = input("Is this better? Please enter yes or no. ")
+    if Happy_now.lower() == "yes":
+        completed_trip.extend(generated_choices)
+        Satisfaction()
+    elif Happy_now.lower() == "no":
+        Satisfaction()
+    else:
+        print("Invalid input. Please enter 'yes' or 'no'. ")
+        Ask_again() 
 
-# Satisfaction()
+def print_completed_trip():
+    print("Completed trip: ")
 
-# Change()
+    print(f"Your completed trip is: Location: {completed_trip[0]}, You will be eating at: {completed_trip[1]}, Your mode of transporation will be: {completed_trip[2]}, You will be enjoying a {completed_trip[3]}.")
 
-# Ask_again()
+Satisfaction()
+
+print_completed_trip()      
 
 #(10 points): As a user, I want to be able to confirm that my day trip is “complete” once I like all of the random selections.
 #(10  points): As a user, I want to display my completed trip in the console
